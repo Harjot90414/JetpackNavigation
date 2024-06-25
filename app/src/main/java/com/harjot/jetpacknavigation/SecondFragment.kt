@@ -93,13 +93,7 @@ class SecondFragment : Fragment() {
                 binding.etOtp4.text.toString().trim().isNullOrEmpty()){
                 binding.etOtp1.error = "Enter OTP"
             }else if (otp==num){
-
-                var dialog = Dialog(mainActivity!!)
-            var dialogBinding = GifCongratsLayoutBinding.inflate(layoutInflater)
-            dialog.setContentView(dialogBinding.root)
-            dialog.window?.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT)
-            dialog.show()
-
+                mainActivity?.navController?.navigate(R.id.action_secondFragment_to_thirdFragment)
                 Toast.makeText(mainActivity, "Matched", Toast.LENGTH_SHORT).show()
             }
             else{
